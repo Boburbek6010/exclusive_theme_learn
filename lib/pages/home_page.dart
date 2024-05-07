@@ -7,10 +7,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var color = context.theme.colorScheme;
     return Scaffold(
-      backgroundColor: context.theme.colorScheme.onSecondary,
+      backgroundColor: color.onSecondary,
       appBar: AppBar(
-        title: const Text('ValueNotifier Example'),
+        title:  Text('ValueNotifier Example', style: TextStyle(
+          color: color.onSurface,
+        ),),
         actions: [
           ValueListenableBuilder<Box<bool>>(
             valueListenable: context.mode.notifier,
